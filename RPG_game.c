@@ -14,7 +14,14 @@ struct player
     char player;
 };
 
-
+void renderMap(int rows, char map[][rows])
+{
+    for (int row = 0; row < 3; row++)
+    {
+        printf("%s", map[1]);
+        break;
+    }
+}
 
 
 int main()
@@ -23,17 +30,21 @@ int main()
     struct player player1 = {0, 0, '@'};
     char direction;
  
-    char map[][10] = {
-        "---------", 
-        "---------",
-        "---------"
+    char map[][40] = {
+        "---------------------", 
+        "------------------DDDD",
+        "---------------------"
     }; 
-    // adjusts width of map
+    char *map_p;
+    map_p = map[0];
+    // printf("%s", map_p);
+    const int rows = 40;
+    renderMap(rows, map);
+    /*
     while (run)
     {
 
-        // printf("\e[1;1H\e[2J");
-        // direction = getch();
+;
         direction = getchar();
 
 
@@ -58,11 +69,7 @@ int main()
             map[player1.player_y][player1.player_x] = '-';
         }      
     }
-
-    // while (run)
-    // {
-    //     ;
-    // }
+    */
 
 
 
